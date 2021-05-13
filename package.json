@@ -1,0 +1,26 @@
+{
+  "name": "sepm-team-m3-4",
+  "version": "1.0.0",
+  "description": "Group assignment for ISYS1106 SEPM Semester 1 2021, team M3-4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhilputhran/SEPM-TEAM-M3-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhilputhran/SEPM-TEAM-M3-4/issues"
+  },
+  "homepage": "https://github.com/Nikhilputhran/SEPM-TEAM-M3-4#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.8",
+    "morgan": "^1.10.0"
+  }
+}
