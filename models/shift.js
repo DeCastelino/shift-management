@@ -17,5 +17,5 @@ const shiftSchema = new Schema({
 }, {timestamps: true});
 
 const Shift = mongoose.model("Shift", shiftSchema);
-
+module.exports = Shift;
 

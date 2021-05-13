@@ -1,4 +1,4 @@
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const staffProfileSchema = new Schema({
@@ -33,5 +33,6 @@ const staffProfileSchema = new Schema({
 }, {timestamps: true});
 
 const StaffProfile = mongoose.model("StaffProfile", staffProfileSchema);
+module.exports = StaffProfile;
 
 
