@@ -1,4 +1,4 @@
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const shiftSchema = new Schema({
@@ -11,7 +11,7 @@ const shiftSchema = new Schema({
         required: true
     }, 
     staffMember: {
-        type: StaffProfile,
+        type: String,
         required: false
     }
 }, {timestamps: true});
