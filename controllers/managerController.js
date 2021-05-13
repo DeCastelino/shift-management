@@ -68,6 +68,16 @@ const shift_create_post = (req, res) => {
         })
 }
 
+const shift_shiftList = (req, res) => {
+    Shift.find().sort({ createdAt: -1 })
+        .then((result) => {
+            res.render("managerFunctions/shiftList", { title: "All Shifts", shifts: result })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
 // const blog_delete = (req, res) => {
 //     const id = req.params.id;
 //     Blog.findByIdAndDelete(id)
@@ -86,6 +96,7 @@ module.exports = {
     staffProfile_create_post,
     staffProfile_staffList,
     shift_create_get,
-    shift_create_post
+    shift_create_post,
+    shift_shiftList
     // blog_delete
 }

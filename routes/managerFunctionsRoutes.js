@@ -7,6 +7,8 @@ router.get("/", managerController.staffProfile_index);
 
 router.get("/staffList", managerController.staffProfile_staffList);
 
+router.get("/shiftList", managerController.shift_shiftList);
+
 router.get("/createStaffProfile", managerController.staffProfile_create_get);
 
 router.post("/", managerController.staffProfile_create_post);

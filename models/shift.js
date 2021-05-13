@@ -10,6 +10,14 @@ const shiftSchema = new Schema({
         type: String,
         required: true
     }, 
+    startTime: {
+        type: String,
+        required: true
+    },
+    duration: {
+        type: Number,
+        required: true
+    },
     staffMember: {
         type: String,
         required: false
