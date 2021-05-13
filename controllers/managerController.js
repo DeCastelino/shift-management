@@ -8,7 +8,7 @@ const Shift = require("../models/shift");
 const staffProfile_index = (req, res) => {
     StaffProfile.find().sort({ createdAt: -1 })
         .then((result) => {
-            res.render("staffFunctions/index", { title: "All Staff", staffProfiles: result })
+            res.render("managerFunctions/index", { title: "All Staff", staffProfiles: result })
         })
         .catch((err) => {
             console.log(err);
@@ -18,7 +18,7 @@ const staffProfile_index = (req, res) => {
 const staffProfile_staffList = (req, res) => {
     StaffProfile.find().sort({ createdAt: -1 })
         .then((result) => {
-            res.render("staffFunctions/staffList", { title: "All Staff", staffProfiles: result })
+            res.render("managerFunctions/staffList", { title: "All Staff", staffProfiles: result })
         })
         .catch((err) => {
             console.log(err);
@@ -29,7 +29,7 @@ const staffProfile_details = (req, res) => {
     const id = req.params.id;
     StaffProfile.findById(id)
         .then(result => {
-            res.render("staffFunctions/details", { staffProfile: result, title: "Staff Details"});
+            res.render("managerFunctions/details", { staffProfile: result, title: "Staff Details"});
         })
         .catch((err) => {
             res.status(404).render("404", { title: "Staff Profile not found"});
@@ -37,7 +37,7 @@ const staffProfile_details = (req, res) => {
 }
 
 const staffProfile_create_get = (req, res) => {
-    res.render("staffFunctions/createStaffProfile", { title: "Create a new Staff Profile" });
+    res.render("managerFunctions/createStaffProfile", { title: "Create a new Staff Profile" });
 }
 
 const staffProfile_create_post = (req, res) => {
@@ -45,7 +45,7 @@ const staffProfile_create_post = (req, res) => {
 
     staffProfile.save()
         .then((result) => {
-            res.redirect("/staffFunctions");
+            res.redirect("/managerFunctions");
         })
         .catch((err) => {
             console.log(err);
@@ -53,7 +53,7 @@ const staffProfile_create_post = (req, res) => {
 }
 
 const shift_create_get = (req, res) => {
-    res.render("staffFunctions/addShift", { title: "Add a new shift" });
+    res.render("managerFunctions/addShift", { title: "Add a new shift" });
 }
 
 const shift_create_post = (req, res) => {
@@ -61,7 +61,7 @@ const shift_create_post = (req, res) => {
 
     shift.save()
         .then((result) => {
-            res.redirect("/staffFunctions");
+            res.redirect("/managerFunctions");
         })
         .catch((err) => {
             console.log(err);

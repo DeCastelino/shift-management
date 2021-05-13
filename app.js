@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const staffFunctionsRoutes = require("./routes/staffFunctionsRoutes");
+const managerFunctionsRoutes = require("./routes/managerFunctionsRoutes");
 
 //express app
 const app = express();
@@ -24,7 +24,7 @@ app.use(morgan("dev"));
 
 
 app.get("/", (req, res) => {
-    res.redirect("/staffFunctions");
+    res.redirect("/managerFunctions");
 });
 
 app.get("/about", (req, res) => {
@@ -32,7 +32,7 @@ app.get("/about", (req, res) => {
 });
 
 //staffFunction routes
-app.use("/staffFunctions", staffFunctionsRoutes);
+app.use("/managerFunctions", managerFunctionsRoutes);
 
 // 404 page
 app.use((req, res) => {
