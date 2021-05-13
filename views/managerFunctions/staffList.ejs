@@ -2,13 +2,12 @@
   <%- include("../partials/head.ejs") %> 
  
     <body>
-      <h1>Home Page</h1>
-      <h2>This is the home page.</h2>
+      <h1>Staff List</h1>
+      <h2>Here are all staff members currently regsitered with the system.</h2>
 
       <%- include("../partials/nav.ejs") %>  
 
-      <div class="homepage">
-          <h2>Homepage</h2>
+      <div class="stafflist">
 
           <% if (staffProfiles.length > 0) { %>
            <% staffProfiles.forEach(staffProfile => { %>
