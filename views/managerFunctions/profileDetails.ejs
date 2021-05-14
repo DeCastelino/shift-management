@@ -1,0 +1,39 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <div class="details content">
+    <h2><%= staffProfile.firstName %> <%= staffProfile.lastName %> </h2>
+    <div class="content">
+      <p><b>Preferred Name:</b> <br> <%= staffProfile.preferredName %></p><br>
+      <p><b>Work Limit:</b> <br> <%= staffProfile.workLimit %></p><br>
+      <p><b>Phone Number:</b> <br> <%= staffProfile.phoneNumber %></p><br>
+      <p><b>Address:</b> <br> <%= staffProfile.address %></p><br>
+      <p><b>Email:</b> <br> <%= staffProfile.email %></p><br>
+      <p><b>Availability:</b> <br> <%= staffProfile.Availability %></p><br>
+    </div>
+    <a style="color: red" class="delete" data-doc="<%= staffProfile._id %>">
+      Delete Profile <br>
+      <!-- <img src="/trash.webp" alt="put in bin"> -->
+    </a>
+  </div>
+
+  <%- include("../partials/footer.ejs") %>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
+</body>
+</html>

@@ -1,10 +1,6 @@
 const StaffProfile = require("../models/staffProfile"); 
 const Shift = require("../models/shift"); 
 
-// blog_index, blog_details, blog_create_get, blog_create_post, blog_delete
-
-
-
 const staffProfile_index = (req, res) => {
     StaffProfile.find().sort({ createdAt: -1 })
         .then((result) => {
@@ -29,7 +25,7 @@ const staffProfile_details = (req, res) => {
     const id = req.params.id;
     StaffProfile.findById(id)
         .then(result => {
-            res.render("managerFunctions/details", { staffProfile: result, title: "Staff Details"});
+            res.render("managerFunctions/profileDetails", { staffProfile: result, title: "Staff Details"});
         })
         .catch((err) => {
             res.status(404).render("404", { title: "Staff Profile not found"});
