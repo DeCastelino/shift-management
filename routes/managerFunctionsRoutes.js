@@ -19,6 +19,6 @@ router.post("/addShift", managerController.shift_create_post);
 
 router.get("/:id", managerController.staffProfile_details);
 
-// router.delete("/:id", managerController.staffProfile_delete);
+router.delete("/:id", managerController.staffProfile_delete);
 
 module.exports = router;

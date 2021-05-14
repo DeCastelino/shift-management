@@ -74,16 +74,16 @@ const shift_shiftList = (req, res) => {
         });
 }
 
-// const blog_delete = (req, res) => {
-//     const id = req.params.id;
-//     Blog.findByIdAndDelete(id)
-//         .then(result => {
-//             res.json({ redirect: "/blogs" })
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//         });
-// }
+const staffProfile_delete = (req, res) => {
+    const id = req.params.id;
+    StaffProfile.findByIdAndDelete(id)
+        .then(result => {
+            res.json({ redirect: "/managerFunctions" })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
 
 module.exports = {
     staffProfile_index,
@@ -93,6 +93,6 @@ module.exports = {
     staffProfile_staffList,
     shift_create_get,
     shift_create_post,
-    shift_shiftList
-    // blog_delete
+    shift_shiftList,
+    staffProfile_delete
 }
