@@ -4,19 +4,19 @@ const Schema = mongoose.Schema;
 const shiftSchema = new Schema({
     date: {
         type: Date,
-        required: true
+        required: [true, "Date is required."]
     }, 
     location: {
         type: String,
-        required: true
+        required: [true, "Location is required."]
     }, 
     startTime: {
         type: String,
-        required: true
+        required: [true, "Start time is required."]
     },
     duration: {
         type: Number,
-        required: true
+        required: [true, "Duration is required."]
     },
     staffMember: {
         type: String,

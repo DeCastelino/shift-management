@@ -4,15 +4,16 @@ const Schema = mongoose.Schema;
 const staffProfileSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: [true, "A first name is required."]
     }, 
     lastName: {
         type: String,
-        required: true
+        required: [true, "A last name is required."]
     }, 
     workLimit: {
         type: Number,
-        required: true
+        min: [0, "Work Limit cannot be less than 0."],
+        required: false
     }, 
     preferredName: {
         type: String,
@@ -20,15 +21,15 @@ const staffProfileSchema = new Schema({
     }, 
     phoneNumber: {
         type: String,
-        required: true
+        required: [true, "A phone number is required."]
     }, 
     address: {
         type: String,
-        required: true
+        required: [true, "An address is required."]
     }, 
     email: {
         type: String,
-        required: true
+        required: [true, "An email address is required."]
     },
     availability: {
         type: String,
