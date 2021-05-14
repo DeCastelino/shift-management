@@ -48,6 +48,31 @@ const staffProfile_create_post = (req, res) => {
         })
 }
 
+const staffProfile_update_get = (req, res) => {
+    res.render("managerFunctions/updateProfileDetails", { title: "Update Staff Profile" });
+}
+
+const staffProfile_put = (req, res) => {
+    const profileId = req.params.id;
+    console.log(profileId);
+    StaffProfile.findByIdAndUpdate(profileId, 
+        {firstName: req.body.firstName},
+        {lastName: req.body.lastName},
+        {workLimit: req.body.workLimit},
+        {preferredName: req.body.preferredName},
+        {phoneNumber: req.body.phoneNumber},
+        {address: req.body.address},
+        {email: req.body.email},
+        {availability: req.body.availability}
+    )
+        .then(result => {
+            res.redirect("/managerFunctions/staffList")
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
 const shift_create_get = (req, res) => {
     res.render("managerFunctions/addShift", { title: "Add a new shift" });
 }
@@ -57,7 +82,7 @@ const shift_create_post = (req, res) => {
 
     shift.save()
         .then((result) => {
-            res.redirect("/managerFunctions");
+            res.render("/managerFunctions/profileDetails");
         })
         .catch((err) => {
             console.log(err);
@@ -94,5 +119,7 @@ module.exports = {
     shift_create_get,
     shift_create_post,
     shift_shiftList,
-    staffProfile_delete
+    staffProfile_delete,
+    staffProfile_put,
+    staffProfile_update_get
 }

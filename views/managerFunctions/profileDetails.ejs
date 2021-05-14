@@ -4,7 +4,9 @@
 <body>
   <%- include("../partials/nav.ejs") %>
 
-  <div class="details content">
+  <a style="color: green; border: 2px solid  green; background-color: rgb(197, 197, 197);" href="/managerFunctions/updateProfileDetails">  <b> Update Details </b> </a><br>
+
+  <div class="details content"><br>
     <h2><%= staffProfile.firstName %> <%= staffProfile.lastName %> </h2>
     <div class="content">
       <p><b>Preferred Name:</b> <br> <%= staffProfile.preferredName %></p><br>
@@ -14,8 +16,8 @@
       <p><b>Email:</b> <br> <%= staffProfile.email %></p><br>
       <p><b>Availability:</b> <br> <%= staffProfile.Availability %></p><br>
     </div>
-    <a style="color: red" class="delete" data-doc="<%= staffProfile._id %>">
-      Delete Profile <br>
+    <a style="color: red; border: 2px solid red; background-color: rgb(141, 113, 113);" class="delete" data-doc="<%= staffProfile._id %>">
+     <b>Delete Profile</b>  <br>
       <!-- <img src="/trash.webp" alt="put in bin"> -->
     </a>
   </div>
