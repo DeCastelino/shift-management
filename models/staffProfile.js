@@ -29,7 +29,11 @@ const staffProfileSchema = new Schema({
     email: {
         type: String,
         required: true
-    }
+    },
+    availability: {
+        type: String,
+        required: false
+    },
 }, {timestamps: true});
 
 const StaffProfile = mongoose.model("StaffProfile", staffProfileSchema);
