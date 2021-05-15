@@ -1,3 +1,5 @@
+// This is the template for a staffProfile as it is used by mongoose and therefore the Mongo db.
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
