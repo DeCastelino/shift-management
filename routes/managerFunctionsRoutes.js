@@ -1,3 +1,5 @@
+/*Routes all manager function related content to the appropriate method in the managerController. */
+
 const express = require("express");
 const managerController = require("../controllers/managerController");
 
