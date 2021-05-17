@@ -1,15 +1,20 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const path = require('path');
 const managerFunctionsRoutes = require("./routes/managerFunctionsRoutes");
+
+// Load config file
+dotenv.config({ path: '.env' })
 
 //express app
 const app = express();
 
 //connect to mongodb
-const dbURI = "mongodb+srv://m3-4:m3-4dbuser1106@clusterm3-4.6lb4p.mongodb.net/m3-4?retryWrites=true&w=majority";
+const dbURI = process.env.DB_URI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => app.listen(3000))
+    .then((result) => app.listen(process.env.PORT))
     .catch((err) => console.log(err)); 
 
 // register view engine
