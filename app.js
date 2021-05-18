@@ -27,6 +27,13 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+app.get('/login', (req, res) => {
+    res.render('login.ejs', { message: '' });
+});
+
+app.get('/register', (req, res) => {
+    res.render('register.ejs', { message: '' });
+});
 
 app.get("/", (req, res) => {
     res.redirect("/managerFunctions");

@@ -111,3 +111,34 @@
       font-size: 1.2em;
       cursor: pointer;
     }
+
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+.account-heading {
+    text-align: center;
+}
+body{
+    background: rgb(219, 226, 226);
+}
+.form-container{
+    position: relative;
+    top: 15vh;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px;
+}
+.btn-lg:hover{
+    background: white;
+    color: black;
+}
+.my-auto{
+    color: red;
+}
+.account-type {
+    height: 300px;
+    text-align: center;
+}
