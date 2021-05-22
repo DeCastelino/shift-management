@@ -27,26 +27,20 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.get('/login', (req, res) => {
-    res.render('login.ejs', { message: '' });
-});
-
-app.get('/register', (req, res) => {
-    res.render('register.ejs', { message: '' });
-});
-
 app.get("/", (req, res) => {
-    res.redirect("/managerFunctions");
+    // res.redirect("/managerFunctions");
+    res.render('dashboard.ejs');
 });
 
 app.get("/about", (req, res) => {
-    res.render("about", { title: "About" });
-});
+    res.render('about.ejs', { title: 'About'});
+    // res.render("about", { title: "About" });
+}); 
 
 //staffFunction routes
 app.use("/managerFunctions", managerFunctionsRoutes);
 
 // 404 page
 app.use((req, res) => {
-    res.status(404).render("404", { title: "404" });
+    res.status(404).render("404", { title: "404 | Page Not Found" });
 })
