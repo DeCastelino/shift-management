@@ -21,7 +21,15 @@
           <input type="date" id="date" name="date" required>
           <br>
           <label for="location">Location:</label>
-          <input type="text" id="location" name="location" required>
+          <select name="location" id="location">
+            <!-- Actual locations only for demonstration purposes. Official locations to be gathered after further consultation with client. -->
+            <option value="">--Select Location--</option>
+            <option value="South Yarra">South Yarra</option>
+            <option value="Oakleigh South">Oakleigh South</option>
+            <option value="CBD">CBD</option>
+            <option value="West Footscray">West Footscray</option>
+          </select>
+          <!-- <input type="text" id="location" name="location" required> -->
           <br>
           <label for="startTime">Start Time:</label>
           <input type="time" id="startTime" name="startTime" required>
@@ -32,6 +40,7 @@
           <br>
           <label for="staffMember">Staff Member:</label>
             <select name="staffMember" id="staffMember">
+              <option value="">--Select Staff Member--</option>
             <% for (const i in staffProfiles) { %> 
               <option value="<%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %>"> <%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %> 
               </option>
