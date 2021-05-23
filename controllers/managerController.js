@@ -86,8 +86,8 @@ const staffProfile_put = async (req, res) => {
         availability: req.body.availability
     }
 
-    const doc = await StaffProfile.findOneAndUpdate(profileId, updates).then ((result) => {
-        res.rredirect('/');
+    const doc = await StaffProfile.findByIdAndUpdate(profileId, updates).then ((result) => {
+        res.redirect('/');
     });
 
     // StaffProfile.findByIdAndUpdate(profileId, 
