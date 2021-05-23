@@ -20,6 +20,12 @@
 .logo {
   text-align: center;
 }
+.content-center {
+  justify-content: center;
+}
+.bold {
+  font-weight: bold;
+}
 :root {
   --blue: #5e72e4;
   --indigo: #5603ad;

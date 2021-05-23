@@ -29,6 +29,7 @@ const staffProfile_staffList = (req, res) => {
 //Directs to the details page of a particular staff member when clicked on from the Staff List page 
 //using their object id as assigned by the db.
 const staffProfile_details = (req, res) => {
+    
     const id = req.params.id;
     StaffProfile.findById(id)
         .then(result => {
@@ -59,29 +60,52 @@ const staffProfile_create_post = (req, res) => {
 
 //Renders the Update Profile Details page when clicked on from a Profile Details page.
 const staffProfile_update_get = (req, res) => {
-    res.render("managerFunctions/updateProfileDetails", { title: "Update Staff Profile" });
+    const id = req.params.id
+    StaffProfile.findById(id)
+        .then(result => {
+            res.render("managerFunctions/updateProfileDetails.ejs", { staffProfile: result, title: "Staff Details" });
+        })
+        .catch((err) => {
+            res.status(404).render("404", { title: "Staff Profile not found"});
+        });
 }
 
 //NOT WORKING. PUT method for updating profile details from the Update Profile page. 
-const staffProfile_put = (req, res) => {
+const staffProfile_put = async (req, res) => {
     const profileId = req.params.id;
-    console.log(profileId);
-    StaffProfile.findByIdAndUpdate(profileId, 
-        {firstName: req.body.firstName},
-        {lastName: req.body.lastName},
-        {workLimit: req.body.workLimit},
-        {preferredName: req.body.preferredName},
-        {phoneNumber: req.body.phoneNumber},
-        {address: req.body.address},
-        {email: req.body.email},
-        {availability: req.body.availability}
-    )
-        .then(result => {
-            res.redirect("/managerFunctions/staffList")
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    console.log('Profile: ', profileId);
+
+    const updates = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        workLimit: req.body.workLimit,
+        preferredName: req.body.preferredName,
+        phoneNumber: req.body.phoneNumber,
+        address: req.body.address,
+        email: req.body.email,
+        availability: req.body.availability
+    }
+
+    const doc = await StaffProfile.findOneAndUpdate(profileId, updates).then ((result) => {
+        res.rredirect('/');
+    });
+
+    // StaffProfile.findByIdAndUpdate(profileId, 
+    //     {firstName: req.body.firstName},
+    //     {lastName: req.body.lastName},
+    //     {workLimit: req.body.workLimit},
+    //     {preferredName: req.body.preferredName},
+    //     {phoneNumber: req.body.phoneNumber},
+    //     {address: req.body.address},
+    //     {email: req.body.email},
+    //     {availability: req.body.availability}
+    // )
+    //     .then(result => {
+    //         res.redirect("/managerFunctions/staffList")
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     });
 }
 
 //Render Add Shift page.

@@ -15,25 +15,25 @@ The fields are meant to be used to update the info. This is currently not workin
         <!-- name is used for the server stuff i think  -->
         <form action="/managerFunctions" method="PUT">
           <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstName" required>
+          <input type="text" id="firstName" name="firstName" value="<%= staffProfile.firstName %>" required>
           <br>
           <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" required>
+          <input type="text" id="lastName" name="lastName" value="<%= staffProfile.lastName %>" required>
           <br>
           <label for="preferredName">Preferred Name:</label>
-          <input type="text" id="preferredName" name="preferredName" required>
+          <input type="text" id="preferredName" name="preferredName" value="<%= staffProfile.preferredName %>" required>
           <br>
           <label for="workLimit">Work Limit:</label>
-          <input type="number" id="workLimit" name="workLimit" >
+          <input type="number" id="workLimit" name="workLimit" value="<%= staffProfile.workLimit %>">
           <br>
           <label for="phoneNumber">Phone Number:</label>
-          <input type="text" id="phoneNumber" name="phoneNumber" required>
+          <input type="text" id="phoneNumber" name="phoneNumber" value="<%= staffProfile.phoneNumber %>" required>
           <br>
           <label for="address">Address:</label>
-          <input type="text" id="address" name="address" required>
+          <input type="text" id="address" name="address" value="<%= staffProfile.address %>" required>
           <br>
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email" required>
+          <input type="text" id="email" name="email" value="<%= staffProfile.email %>" required>
             <br>
           <button>Submit</button>
         </form>

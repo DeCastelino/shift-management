@@ -37,7 +37,7 @@ app.get("/about", (req, res) => {
     // res.render("about", { title: "About" });
 }); 
 
-//staffFunction routes
+//managerFunction routes
 app.use("/managerFunctions", managerFunctionsRoutes);
 
 // 404 page
