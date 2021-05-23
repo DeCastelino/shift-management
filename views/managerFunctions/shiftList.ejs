@@ -15,6 +15,33 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+  <%- include("../partials/head.ejs") %> 
+ 
+    <body>
+      <h1>Shift List</h1>
+      <h2>Here are all shifts currently regsitered with the system.</h2>
+
+      <%- include("../partials/nav.ejs") %>  
+
+      <div class="shiftlist">
+
+          <% if (shifts.length > 0) { %>
+           <% shifts.forEach(shift => { %>
+          <!-- <a class="single" href="/shifts/<%= shift._id %>"> -->
+            <p class="date"> Date: <%= shift.date.getDate() %> / <%= shift.date.getMonth() %> / <%= shift.date.getFullYear() %></p>
+            <p class="location"> Location: <%= shift.location %> </p>
+            <p class="startTime"> Start Time: <%= shift.startTime %> </p>
+            <p class="duration"> Duration: <%= shift.duration %> hrs </p>
+            <p class= "staffMember">Assigned Staff Member: <%= shift.staffMember %> </p>
+            <br>
+          <!-- </a> -->
+            <% }) %>
+          <% } else { %> 
+             <p>No Shifts to display</p> 
+          <% } %> 
+>>>>>>> dadadcf06adcf32837eb4bd0eb60561bc952efe0
 
 <head>
   <meta charset="utf-8" />

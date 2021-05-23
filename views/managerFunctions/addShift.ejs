@@ -15,6 +15,7 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
   <meta charset="utf-8" />
@@ -374,5 +375,60 @@
       });
   </script>
 </body>
+=======
+  <%- include("../partials/head.ejs") %> 
+
+    <body>
+      <h1>Add a shift</h1>
+      <h2>Use this form to add a new shift.</h2>
+
+      <%- include("../partials/nav.ejs") %> 
+
+
+      <div class="create-shift content">
+        <!-- name is used for the server stuff i think  -->
+        <form action="addShift" method="POST" onsubmit="successAlert()">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+          <br>
+          <label for="location">Location:</label>
+          <select name="location" id="location">
+            <!-- Actual locations only for demonstration purposes. Official locations to be gathered after further consultation with client. -->
+            <option value="">--Select Location--</option>
+            <option value="South Yarra">South Yarra</option>
+            <option value="Oakleigh South">Oakleigh South</option>
+            <option value="CBD">CBD</option>
+            <option value="West Footscray">West Footscray</option>
+          </select>
+          <!-- <input type="text" id="location" name="location" required> -->
+          <br>
+          <label for="startTime">Start Time:</label>
+          <input type="time" id="startTime" name="startTime" required>
+          <br>
+          <label for="duration">Duration:</label>
+          <!-- Current Max is set to 8, a standard working day. Consultation with the client needed to be sure. -->
+          <input type="number" id="duration" name="duration" min="1" max="8" required>
+          <br>
+          <label for="staffMember">Staff Member:</label>
+            <select name="staffMember" id="staffMember">
+              <option value="">--Select Staff Member--</option>
+            <% for (const i in staffProfiles) { %> 
+              <option value="<%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %>"> <%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %> 
+              </option>
+            <% } %> 
+          </select>
+          <br>
+          <button>Submit</button>
+        </form>
+      </div>
+
+      <script>
+        function successAlert() {
+          alert("Shift successfully created");
+        }
+      </script>
+      
+      <%- include("../partials/footer.ejs") %> 
+>>>>>>> dadadcf06adcf32837eb4bd0eb60561bc952efe0
 
 </html>
