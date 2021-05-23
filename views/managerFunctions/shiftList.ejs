@@ -14,14 +14,14 @@
 
           <% if (shifts.length > 0) { %>
            <% shifts.forEach(shift => { %>
-          <a class="single" href="/shifts/<%= shift._id %>">
-            <p class="date"> Date: <%= shift.date.getDate() %> <%= shift.date.getMonth() %> <%= shift.date.getFullYear() %></p>
+          <!-- <a class="single" href="/shifts/<%= shift._id %>"> -->
+            <p class="date"> Date: <%= shift.date.getDate() %> / <%= shift.date.getMonth() %> / <%= shift.date.getFullYear() %></p>
             <p class="location"> Location: <%= shift.location %> </p>
             <p class="startTime"> Start Time: <%= shift.startTime %> </p>
             <p class="duration"> Duration: <%= shift.duration %> hrs </p>
             <p class= "staffMember">Assigned Staff Member: <%= shift.staffMember %> </p>
             <br>
-          </a>
+          <!-- </a> -->
             <% }) %>
           <% } else { %> 
              <p>No Shifts to display</p> 

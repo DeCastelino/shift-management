@@ -16,7 +16,7 @@
 
       <div class="create-staffProfile content">
         <!-- name is used for the server stuff i think  -->
-        <form action="/managerFunctions" method="POST">
+        <form action="/managerFunctions" method="POST" onsubmit="successAlert()">
           <label for="firstName">First Name:</label>
           <input type="text" id="firstName" name="firstName" required>
           <br>
@@ -27,7 +27,7 @@
           <input type="text" id="preferredName" name="preferredName" required>
           <br>
           <label for="workLimit">Work Limit:</label>
-          <input type="number" id="workLimit" name="workLimit" >
+          <input type="number" id="workLimit" name="workLimit" min="0">
           <br>
           <label for="phoneNumber">Phone Number:</label>
           <input type="text" id="phoneNumber" name="phoneNumber" required>
@@ -41,6 +41,14 @@
           <button>Submit</button>
         </form>
       </div>
+
+      <script>
+        function successAlert() {
+          alert("Profile successfully created");
+        }
+      </script>
+
+
       
       <%- include("../partials/footer.ejs") %> 
 

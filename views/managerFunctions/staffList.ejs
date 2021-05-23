@@ -15,8 +15,6 @@
            <% staffProfiles.forEach(staffProfile => { %>
           <a class="single" href="/managerFunctions/<%= staffProfile._id %>">
             <h3 class="fullName"> <%= staffProfile.firstName %> <%= staffProfile.lastName %> </h3>
-            <!-- <h3 class="lastName"> <%= staffProfile.lastName %> </h3>
-            <p class= "preferredName"><%= staffProfile.preferredName %> </p> -->
           </a>
             <% }) %>
           <% } else { %> 

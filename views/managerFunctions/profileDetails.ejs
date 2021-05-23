@@ -32,6 +32,8 @@ Two possible actions are taken:
   <script>
     const trashcan = document.querySelector('a.delete');
     trashcan.addEventListener('click', (e) => {
+      const goOn = deleteConfirm();
+      if (goOn){
       const endpoint = `/managerFunctions/${trashcan.dataset.doc}`;
       fetch(endpoint, {
         method: 'DELETE',
@@ -39,8 +41,22 @@ Two possible actions are taken:
       .then(response => response.json())
       .then(data => window.location.href = data.redirect)
       .catch(err => console.log(err));
+    } else 
+      deleteCancel();
+      return;
     });
     
+  </script>
+
+  <script>
+    function deleteConfirm() {
+          return confirm("Are you sure wish to deactivate this account? (This cannot be undone.)");
+        };
+  </script>
+  <script>
+    function deleteCancel() {
+          alert("Deactivation Cancelled");
+        };
   </script>
 </body>
 </html>
