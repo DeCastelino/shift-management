@@ -15,28 +15,6 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-  <%- include("../partials/head.ejs") %> 
- 
-    <body>
-      <h1>Staff List</h1>
-      <h2>Here are all staff members currently regsitered with the system.</h2>
-
-      <%- include("../partials/nav.ejs") %>  
-
-      <div class="stafflist">
-
-          <% if (staffProfiles.length > 0) { %>
-           <% staffProfiles.forEach(staffProfile => { %>
-          <a class="single" href="/managerFunctions/<%= staffProfile._id %>">
-            <h3 class="fullName"> <%= staffProfile.firstName %> <%= staffProfile.lastName %> </h3>
-          </a>
-            <% }) %>
-          <% } else { %> 
-             <p>No Staff Profiles to display</p> 
-          <% } %> 
->>>>>>> dadadcf06adcf32837eb4bd0eb60561bc952efe0
 
 <head>
   <meta charset="utf-8" />
