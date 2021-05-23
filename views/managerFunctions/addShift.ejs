@@ -183,7 +183,15 @@
                       <div class="col-md-4 pl-md-1">
                         <div class="form-group">
                           <label for="location">Location*</label>
-                          <input type="text" id="location" name="location" class="form-control" required>
+                          <select name="location" id="location">
+                            <!-- Actual locations only for demonstration purposes. Official locations to be gathered after further consultation with client. -->
+                            <option value="">--Select Location--</option>
+                            <option value="South Yarra">South Yarra</option>
+                            <option value="Oakleigh South">Oakleigh South</option>
+                            <option value="CBD">CBD</option>
+                            <option value="West Footscray">West Footscray</option>
+                          </select>
+                          <!-- <input type="text" id="location" name="location" class="form-control" required> -->
                         </div>
                       </div>
                     </div>
@@ -205,7 +213,14 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label for="staffMember">Staff Member</label>
-                          <input type="text" id="staffMember" name="staffMember" class="form-control">
+                          <select name="staffMember" id="staffMember">
+                            <option value="">--Select Staff Member--</option>
+                          <% for (const i in staffProfiles) { %> 
+                            <option value="<%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %>"> <%= staffProfiles[i].firstName %> <%= staffProfiles[i].lastName %> 
+                            </option>
+                          <% } %> 
+                        </select>
+                          <!-- <input type="text" id="staffMember" name="staffMember" class="form-control"> -->
                         </div>
                       </div>
                     </div>
