@@ -86,7 +86,14 @@ const staffProfile_put = (req, res) => {
 
 //Render Add Shift page.
 const shift_create_get = (req, res) => {
-    res.render("managerFunctions/addShift", { title: "Add a new shift" });
+    StaffProfile.find().sort({ createdAt: -1 })
+        .then((result) => {
+            res.render("managerFunctions/addShift", { title: "Add a new shift", staffProfiles: result })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    // res.render("managerFunctions/addShift", { title: "Add a new shift" });
 }
 
 //Post method for creating a shift. Redirects to the Shift List page. 
