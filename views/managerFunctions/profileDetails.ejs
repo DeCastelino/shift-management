@@ -42,6 +42,7 @@ Two possible actions are taken:
       .then(data => window.location.href = data.redirect)
       .catch(err => console.log(err));
     } else 
+      deleteCancel();
       return;
     });
     
@@ -50,6 +51,11 @@ Two possible actions are taken:
   <script>
     function deleteConfirm() {
           return confirm("Are you sure wish to deactivate this account? (This cannot be undone.)");
+        };
+  </script>
+  <script>
+    function deleteCancel() {
+          alert("Deactivation Cancelled");
         };
   </script>
 </body>
