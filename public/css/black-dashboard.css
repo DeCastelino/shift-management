@@ -26,6 +26,11 @@
 .bold {
   font-weight: bold;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 :root {
   --blue: #5e72e4;
   --indigo: #5603ad;
