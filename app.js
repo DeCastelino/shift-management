@@ -6,7 +6,7 @@ const path = require('path');
 const managerFunctionsRoutes = require("./routes/managerFunctionsRoutes");
 
 // Load config file
-dotenv.config({ path: '.env' })
+dotenv.config({ path: './config/.env' })
 
 //express app
 const app = express();
